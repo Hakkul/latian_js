@@ -6,4 +6,6 @@ const barang = [
 
 ]
 
-console.log(barang) //menampilkan seluruh isi objek dalam array
+// console.log(barang) //menampilkan seluruh isi objek dalam array
+console.log(barang[0].nama_barang) //mengakases barang dengan indeks 0, yang berarti mengambil isi array di indeks 0 yaitu buku, dan .adalah
+                                    // untuk mengakses objek
