@@ -5,3 +5,5 @@ nama = "hakkul"
 const umur = -7.735667529986852
 // console.log(nama)
 console.log(umur) 
+
+//Pengenalan variable
