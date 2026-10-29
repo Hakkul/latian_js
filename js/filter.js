@@ -31,3 +31,6 @@ const barang = [
 // const pilih = barang.filter(item => item.kategori === "barang")
 
 // console.log(pilih) menampilkan yang hanya kategori barang
+
+
+//Pengenalan tentang filter dan arrow function
