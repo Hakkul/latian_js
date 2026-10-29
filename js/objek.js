@@ -11,3 +11,5 @@ const orang = {
 
 // console.log(orang) //Memanggil semua objek dalam orang
 console.log(orang.nama1) //memanggil nama orang di nama1, dan yang di tampilkan hanya objek dengan nama1 itu saja
+
+//Pengenalan tentang objek dan cara mengakses
