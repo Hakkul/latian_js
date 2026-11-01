@@ -1,4 +1,4 @@
-//Menmilih elemen di html
+//Memilih elemen di html
 const deskripsi = document.querySelector('.deskripsi')
 const tombol = document.querySelector('#btntoggle')
 const daftar_produk = document.querySelector('#Daftar_produk')
