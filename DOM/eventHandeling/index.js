@@ -5,11 +5,12 @@ const to_list = document.querySelector('#todoList')
 // hendleling submit & preventDefault
 
 todo.addEventListener('submit', (event) =>{
-    event.preventDefalut() // Mencegah halaman reload saat form di-submit
+    event.preventDefalut() 
+    console.log('form sudah di submit') // Mencegah halaman reload saat form di-submit
 })
 
 // Buat elemen <li> baru
-const taskNew = todoInput.value;
+const taskNew = todoInput.value.trim;
 
 const li = document.createElement('li')
 li.innerHTML = `${taskNew} <buuton class="dellTask>happus</button>`
