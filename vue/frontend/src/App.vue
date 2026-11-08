@@ -27,7 +27,7 @@ const menuAktif = ref('home')
     <div>
       <!-- Jika menuAktif bernilai 'home', tampilkan ini -->
       <div v-if="menuAktif === 'home'">
-        <h2>Ini adalah Halaman Menu 1 (App.vue)</h2>
+        <h2 class="h2">Ini adalah Halaman Menu 1 (App.vue)</h2>
         <p>Selamat datang di halaman utama!</p>
       </div>
 
