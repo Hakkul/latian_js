@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import Latian from './latian.vue' // 1. Impor file latian.vue
 import hallo from './components/hallo.vue'
 import tes from './tes.vue'
+import './css/button.css'
 
 // Membuat state/variabel untuk melacak menu aktif ('home' atau 'latian')
 const menuAktif = ref('home')
@@ -12,10 +13,10 @@ const menuAktif = ref('home')
   <div style="padding: 20px;">
     <!-- Bagian Tombol Menu (Navigasi) -->
     <nav style="margin-bottom: 20px;">
-      <button @click="menuAktif = 'home'">Menu 1 (Home)</button>
-      <button @click="menuAktif = 'latian'" style="margin-left: 10px;">Menu 2 (Latian)</button>
-      <button @click="menuAktif = 'hallo'" style="margin-left: 10px;">Menu 3 (hallo)</button>
-      <button @click="menuAktif = 'tes'" style="margin-left: 10px;">Menu 4 (tes css)</button>
+      <button class="button" @click="menuAktif = 'home'">Menu 1 (Home)</button>
+      <button class="btn-green" @click="menuAktif = 'latian'" style="margin-left: 10px;">Menu 2 (Latian)</button>
+      <button class="btn-orange" @click="menuAktif = 'hallo'" style="margin-left: 10px;">Menu 3 (hallo)</button>
+      <button  class="button-tes" @click="menuAktif = 'tes'" style="margin-left: 10px;">Menu 4 (tes css)</button>
 
 
     </nav>
