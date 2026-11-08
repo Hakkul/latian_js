@@ -1,7 +1,7 @@
 
 <script setup>
 import { ref, computed } from "vue"
-// import './css/app.css'
+import './css/latian.css'
 
 
 const count = ref(0)
@@ -27,8 +27,8 @@ const reset = () => {
     <p>Nilai ini adalah bilangan: <strong>{{ statusGenapGanjil }}</strong></p>
 
     <div class="actions">
-      <button @click="tambah" :disabled="count >= batasMaksimal">Tambah (+)</button>
-      <button @click="count > 0 ? count-- : null">Kurang (-)</button>
+      <button class="add" @click="tambah" :disabled="count >= batasMaksimal">Tambah (+)</button>
+      <button class="min" @click="count > 0 ? count-- : null">Kurang (-)</button>
       <button @click="reset" class="btn-reset">Reset</button>
     </div>
   </div>
