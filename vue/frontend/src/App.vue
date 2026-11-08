@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import Latian from './latian.vue' // 1. Impor file latian.vue
 import hallo from './components/hallo.vue'
+import tes from './tes.vue'
 
 // Membuat state/variabel untuk melacak menu aktif ('home' atau 'latian')
 const menuAktif = ref('home')
@@ -14,6 +15,8 @@ const menuAktif = ref('home')
       <button @click="menuAktif = 'home'">Menu 1 (Home)</button>
       <button @click="menuAktif = 'latian'" style="margin-left: 10px;">Menu 2 (Latian)</button>
       <button @click="menuAktif = 'hallo'" style="margin-left: 10px;">Menu 3 (hallo)</button>
+      <button @click="menuAktif = 'tes'" style="margin-left: 10px;">Menu 4 (tes css)</button>
+
 
     </nav>
 
@@ -35,6 +38,11 @@ const menuAktif = ref('home')
       <div v-else-if="menuAktif === 'hallo'">
       <hallo />
       </div>
+
+      <div v-else-if="menuAktif === 'tes'"> 
+        <tes />
+      </div>
+
     </div>
   </div>
 </template>
