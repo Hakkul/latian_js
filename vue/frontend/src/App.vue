@@ -14,9 +14,9 @@ const menuAktif = ref('home')
     <!-- Bagian Tombol Menu (Navigasi) -->
     <nav style="margin-bottom: 20px;">
       <button class="button" @click="menuAktif = 'home'">Menu 1 (Home)</button>
-      <button class="btn-green" @click="menuAktif = 'latian'" style="margin-left: 10px;">Menu 2 (Latian)</button>
-      <button class="btn-orange" @click="menuAktif = 'hallo'" style="margin-left: 10px;">Menu 3 (hallo)</button>
-      <button  class="button-tes" @click="menuAktif = 'tes'" style="margin-left: 10px;">Menu 4 (tes css)</button>
+      <button class="btn-green" @click="menuAktif = 'latian'" style="margin-left: 10px;">Menu 2 </button>
+      <button class="btn-orange" @click="menuAktif = 'hallo'" style="margin-left: 10px;">Menu 3 </button>
+      <button  class="button-tes" @click="menuAktif = 'tes'" style="margin-left: 10px;">Menu 4 </button>
 
 
     </nav>
