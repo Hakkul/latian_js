@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import Latian from './latian.vue' // 1. Impor file latian.vue
 import hallo from './components/hallo.vue'
+import pinia from './pinia/pinia.vue'
 import tes from './tes.vue'
 import './css/button.css'
 
@@ -17,6 +18,7 @@ const menuAktif = ref('home')
       <button class="btn-green" @click="menuAktif = 'latian'" style="margin-left: 10px;">Menu 2 </button>
       <button class="btn-orange" @click="menuAktif = 'hallo'" style="margin-left: 10px;">Menu 3 </button>
       <button  class="button-tes" @click="menuAktif = 'tes'" style="margin-left: 10px;">Menu 4 </button>
+      <button  class="button-tes" @click="menuAktif = 'pinia'" style="margin-left: 10px;">Menu 5 </button>
 
 
     </nav>
@@ -42,6 +44,10 @@ const menuAktif = ref('home')
 
       <div v-else-if="menuAktif === 'tes'"> 
         <tes />
+      </div>
+
+   <div v-else-if="menuAktif === 'pinia'"> 
+        <pinia />
       </div>
 
     </div>

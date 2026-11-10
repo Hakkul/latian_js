@@ -2,8 +2,8 @@
 let nama = "Hakkul qoul"
 nama = "hakkul"
 //Gunakan const untuk data yang memang tidak untuk di rubah, seperti titik koordinasi
-const umur = -7.735667529986852
+const koordinat = -7.73566752998685
 // console.log(nama)
-console.log(umur) 
+console.log(koordinat) 
 
 //Pengenalan variable
