@@ -1,6 +1,6 @@
 <script setup>
 
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import ProdukCard from './ProdukCard.vue';
 import { useCardStore } from '../stores/cartStore';
 import '../assets/css/daftarProduk.css'
@@ -26,6 +26,27 @@ const handleBuyProduk = (produk_data) => {
     cardStore.tambahItem(produk_data)
     
 }
+
+const daftarKategori = ['semua', 'alat tulis', 'alat gambar', 'logika', 'color']
+
+
+const kategoriAktif = ref('semua')
+
+const produkTerfilter = computed(() => {
+  // Jika tombol 'Semua' yang aktif, tampilkan seluruh produk
+  if (kategoriAktif.value === 'Semua') {
+    return daftarProduk.value;
+  }
+  
+  // Jika kategori lain dipilih, ambil hanya produk yang kategorinya cocok
+  return daftarProduk.value.filter(
+    (item) => item.kategori === kategoriAktif.value
+  )
+})
+
+const tambahKeKeranjang = (produk_data) => {
+  cardStore.tambahItem(produk_data);
+};
 
 </script>
 
