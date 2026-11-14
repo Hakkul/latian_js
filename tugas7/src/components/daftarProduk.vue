@@ -7,10 +7,10 @@ import '../assets/css/daftarProduk.css'
 const cardStore = useCardStore();
 
 const daftarProduk = ref([
-    {id: 1, nama: 'buku tulis', harga: 2000, Stok: 3, gambar: '/img/book.png'},
-    {id: 2, nama: 'buku gambar', harga: 5000, Stok: 7, gambar: '/img/book.png'},
-    {id: 3, nama: 'buku coding', harga: 7000, Stok: 9, gambar: '/img/book.png'},
-    {id: 4, nama: 'buku mewarnai', harga: 6500, Stok: 6, gambar: '/img/book.png'}
+    {id: 1, nama: 'buku tulis', harga: 2000, kategori: "alat tulis", Stok: 3, gambar: '/img/book.png'},
+    {id: 2, nama: 'buku gambar', harga: 5000, Stok: 7, kategori: "alat gambar",  gambar: '/img/book.png'},
+    {id: 3, nama: 'buku coding', harga: 7000, Stok: 9, kategori: "logika",gambar: '/img/book.png'},
+    {id: 4, nama: 'buku mewarnai', harga: 6500, Stok: 6, kategori: "color",gambar: '/img/book.png'}
 
 ])
 
@@ -45,7 +45,8 @@ const handleBuyProduk = (produk_data) => {
         :nama="item.nama"
         :harga="item.harga"
         :Stok="item.Stok"
-        :gambar="item.gambar" 
+        :gambar="item.gambar"
+        :kategori="item.kategori"
         @beli_produk="handleBuyProduk"
       />
     </div>

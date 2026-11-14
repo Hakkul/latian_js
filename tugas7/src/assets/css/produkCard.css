@@ -41,6 +41,12 @@
     margin-bottom: 16px;
 }
 
+.Kategori-produk{
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #2b6cb0;
+}
+
 .button-cart {
     background-color: #3182ce;
     color: white;

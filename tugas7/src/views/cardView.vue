@@ -20,6 +20,7 @@ const cartStore = useCardStore();
         <div>
           <h4>{{ item.nama }}</h4>
           <p>Rp {{ item.harga }} x {{ item.qty }}</p>
+          <p>kategori {{item.kategori}}</p>
         </div>
         <button @click="cartStore.hapusItem(item.id)">Hapus</button>
       </div>

@@ -7,6 +7,7 @@ const props = defineProps({
     nama: {type: String, required: true},
     harga: {type: Number, required: true},
     Stok: {type: Number, default: 0},
+    kategori: {type: String, default: 'umum'},
     gambar: {type: String} 
 })
 
@@ -19,6 +20,7 @@ const handleBeli = () => {
             nama: props.nama, 
             harga: props.harga, 
             Stok: props.Stok,
+            kategori: props.kategori,
             gambar: props.gambar})
     } else {
         alert('stok habis')
@@ -35,6 +37,7 @@ const handleBeli = () => {
         <p class="stok-produk" :class="{habis: Stok === 0}">
             Stok: {{ Stok > 0 ? Stok : 'habis' }}
         </p>
+        <p class="Kategori-produk"> kategori: {{ kategori }}</p>
 
         <button @click="handleBeli" :disabled="Stok === 0" class="button-cart"> 
             {{ Stok > 0 ? '+ keranjang' : 'Stok kosong' }}

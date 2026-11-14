@@ -27,3 +27,15 @@
     gap: 24px; 
     justify-content: center; 
 }
+
+.Kategori-produk {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #4f46e5; /* Biru indigo */
+  background-color: #eef2ff;
+  padding: 4px 12px;
+  border-radius: 999px; /* Bentuk kapsul/pill */
+  width: fit-content;
+  margin: 0 0 16px 0;
+  text-transform: capitalize;
+}
