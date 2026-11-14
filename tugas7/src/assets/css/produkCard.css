@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+.produk-card:hover {
+    background-color: #dde1e4;
+}
+
 .product-img {
     width: 100px;
     height: 130px;
