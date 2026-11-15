@@ -42,9 +42,6 @@ const produkTerfilter = computed(() => {
   )
 })
 
-const tambahKeKeranjang = (produk_data) => {
-  cardStore.tambahItem(produk_data);
-};
 
 </script>
 
@@ -79,7 +76,7 @@ const tambahKeKeranjang = (produk_data) => {
         :Stok="item.Stok"
         :gambar="item.gambar"
         :kategori="item.kategori"
-        @beli_produk="tambahKeKeranjang"
+        @beli_produk="handleBuyProduk"
       />
     </div>
   </div>
