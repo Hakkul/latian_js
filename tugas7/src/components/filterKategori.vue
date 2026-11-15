@@ -11,7 +11,7 @@ defineProps({
     }
 
 })
-const emit = defineProps(['pilih kategori'])
+const emit = defineEmits(['pilih-kategori'])
 
 </script>
 

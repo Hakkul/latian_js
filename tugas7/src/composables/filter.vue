@@ -2,13 +2,17 @@
 import {ref, computed} from 'vue'
 
 export function filterProduk(daftar_produk) {
-    const daftarKategori = ['semua', 'alat tulis', 'alat gambar', 'logika']
+    const daftarKategori = ['semua', 'alat tulis', 'alat gambar', 'logika', 'color']
     const kategoriAktiv = ref('semua') 
 
     const produkTerFilter = computed(() => {
         if (kategoriAktiv.value === 'semua') {
             return daftar_produk.value
         }
+
+        return daftar_produk.value.filter(
+            (item) => item.kategori === kategoriAktiv.value
+        )
     })
 
     const pilihKategori = (kategoriBaru) => {

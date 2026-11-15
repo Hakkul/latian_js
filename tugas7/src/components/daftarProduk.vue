@@ -9,7 +9,7 @@ import { filterProduk } from '../composables/filter.vue';
 import { storeToRefs } from 'pinia';
 
 const cardStore = useCardStore();
-const daftarProduk = storeToRefs(cardStore)
+// const daftarProduk = storeToRefs(cardStore)
 
 const daftarProduk = ref([
     {id: 1, nama: 'buku tulis', harga: 2000, kategori: "alat tulis", Stok: 3, gambar: '/img/book.png'},
