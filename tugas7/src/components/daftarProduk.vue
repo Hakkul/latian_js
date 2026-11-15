@@ -27,18 +27,16 @@ const handleBuyProduk = (produk_data) => {
     
 }
 
-const daftarKategori = ['semua', 'alat tulis', 'alat gambar', 'logika', 'color']
+const daftarKategori = ['Semua', 'alat tulis', 'alat gambar', 'logika', 'color']
 
 
-const kategoriAktif = ref('semua')
+const kategoriAktif = ref('Semua')
 
 const produkTerfilter = computed(() => {
-  // Jika tombol 'Semua' yang aktif, tampilkan seluruh produk
   if (kategoriAktif.value === 'Semua') {
     return daftarProduk.value;
   }
   
-  // Jika kategori lain dipilih, ambil hanya produk yang kategorinya cocok
   return daftarProduk.value.filter(
     (item) => item.kategori === kategoriAktif.value
   )
@@ -55,12 +53,25 @@ const tambahKeKeranjang = (produk_data) => {
     <h2>Katalog baru</h2>
     <p>Silahkan pilih buku yang anda inginkan</p>
     
+    <div class="filter-kategori">
+      <button 
+        v-for="kat in daftarKategori"
+        :key="kat"
+        @click="kategoriAktif = kat"
+        :class="{aktif: kategoriAktif === kat}"
+        class="btn-kategori"
+
+        >
+        {{ kat }}
+
+      </button>
+    </div>
 
     <div class="produk-grid">
 
       <!-- Perhatikan kata 'item' di bawah ini -->
       <ProdukCard 
-        v-for="item in daftarProduk" 
+        v-for="item in produkTerfilter" 
         :key="item.id"
         :id="item.id"
         :nama="item.nama"
@@ -68,7 +79,7 @@ const tambahKeKeranjang = (produk_data) => {
         :Stok="item.Stok"
         :gambar="item.gambar"
         :kategori="item.kategori"
-        @beli_produk="handleBuyProduk"
+        @beli_produk="tambahKeKeranjang"
       />
     </div>
   </div>
