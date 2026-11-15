@@ -27,7 +27,7 @@ const handleBuyProduk = (produk_data) => {
     
 }
 
-const daftarKategori = ['Semua', 'alat tulis', 'alat gambar', 'logika', 'color']
+const daftarKategori = ['Semua', 'alat tulis', 'alat gambar', 'logika', 'color', '']
 
 
 const kategoriAktif = ref('Semua')
