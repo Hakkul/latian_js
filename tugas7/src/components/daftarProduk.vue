@@ -4,7 +4,12 @@ import { computed, ref } from 'vue';
 import ProdukCard from './ProdukCard.vue';
 import { useCardStore } from '../stores/cartStore';
 import '../assets/css/daftarProduk.css'
+import filterKategori from './filterKategori.vue';
+import { filterProduk } from '../composables/filter.vue';
+import { storeToRefs } from 'pinia';
+
 const cardStore = useCardStore();
+const daftarProduk = storeToRefs(cardStore)
 
 const daftarProduk = ref([
     {id: 1, nama: 'buku tulis', harga: 2000, kategori: "alat tulis", Stok: 3, gambar: '/img/book.png'},
@@ -14,6 +19,12 @@ const daftarProduk = ref([
 
 ])
 
+const {
+  daftarKategori,
+  kategoriAktiv,
+  produkTerfilter,
+  pilihkategori
+} = filterProduk (daftarProduk)
 
 const handleBuyProduk = (produk_data) => {
   const produk = daftarProduk.value.find(p => p.id === produk_data.id)
@@ -27,42 +38,21 @@ const handleBuyProduk = (produk_data) => {
     
 }
 
-const daftarKategori = ['Semua', 'alat tulis', 'alat gambar', 'logika', 'color', '']
-
-
-const kategoriAktif = ref('Semua')
-
-const produkTerfilter = computed(() => {
-  if (kategoriAktif.value === 'Semua') {
-    return daftarProduk.value;
-  }
-  
-  return daftarProduk.value.filter(
-    (item) => item.kategori === kategoriAktif.value
-  )
-})
-
-
 </script>
 
 <template>
   <div class="daftar-produk-container">
     <h2>Katalog baru</h2>
     <p>Silahkan pilih buku yang anda inginkan</p>
+
+    <filterKategori
+    :daftarKategori='daftarKategori'
+    :kategoriAktiv="kategoriAktiv"
+    @pilihKategori="pilihkategori"
+    >
+
+    </filterKategori>
     
-    <div class="filter-kategori">
-      <button 
-        v-for="kat in daftarKategori"
-        :key="kat"
-        @click="kategoriAktif = kat"
-        :class="{aktif: kategoriAktif === kat}"
-        class="btn-kategori"
-
-        >
-        {{ kat }}
-
-      </button>
-    </div>
 
     <div class="produk-grid">
 
