@@ -1,27 +1,26 @@
-<script setup>
 import {ref, computed} from 'vue'
 
 export function filterProduk(daftar_produk) {
     const daftarKategori = ['semua', 'alat tulis', 'alat gambar', 'logika', 'color']
-    const kategoriAktiv = ref('semua') 
+    const kategoriAktif = ref('semua') 
 
     const produkTerFilter = computed(() => {
-        if (kategoriAktiv.value === 'semua') {
+        if (kategoriAktif.value === 'semua') {
             return daftar_produk.value
         }
 
         return daftar_produk.value.filter(
-            (item) => item.kategori === kategoriAktiv.value
+            (item) => item.kategori === kategoriAktif.value
         )
     })
 
     const pilihKategori = (kategoriBaru) => {
-        kategoriAktiv.value = kategoriBaru
+        kategoriAktif.value = kategoriBaru
     }
 
     return {
         daftarKategori,
-        kategoriAktiv,
+        kategoriAktif,
         produkTerFilter,
         pilihKategori
     }
@@ -29,5 +28,3 @@ export function filterProduk(daftar_produk) {
     
 }
 
-
-</script> 

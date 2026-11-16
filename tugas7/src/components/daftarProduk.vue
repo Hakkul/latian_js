@@ -5,8 +5,8 @@ import ProdukCard from './ProdukCard.vue';
 import { useCardStore } from '../stores/cartStore';
 import '../assets/css/daftarProduk.css'
 import filterKategori from './filterKategori.vue';
-import { filterProduk } from '../composables/filter.vue';
-import { storeToRefs } from 'pinia';
+import { filterProduk } from '../composables/filter';
+// import { storeToRefs } from 'pinia';
 
 const cardStore = useCardStore();
 // const daftarProduk = storeToRefs(cardStore)
@@ -21,10 +21,10 @@ const daftarProduk = ref([
 
 const {
   daftarKategori,
-  kategoriAktiv,
-  produkTerfilter,
-  pilihkategori
-} = filterProduk (daftarProduk)
+  kategoriAktif,
+  produkTerFilter,
+  pilihKategori
+} = filterProduk(daftarProduk)
 
 const handleBuyProduk = (produk_data) => {
   const produk = daftarProduk.value.find(p => p.id === produk_data.id)
@@ -46,9 +46,9 @@ const handleBuyProduk = (produk_data) => {
     <p>Silahkan pilih buku yang anda inginkan</p>
 
     <filterKategori
-    :daftarKategori='daftarKategori'
-    :kategoriAktiv="kategoriAktiv"
-    @pilihKategori="pilihkategori"
+    :daftarKategori="daftarKategori"
+    :kategoriAktif="kategoriAktif"
+    @pilih-Kategori="pilihKategori"
     >
 
     </filterKategori>
@@ -58,7 +58,7 @@ const handleBuyProduk = (produk_data) => {
 
       <!-- Perhatikan kata 'item' di bawah ini -->
       <ProdukCard 
-        v-for="item in produkTerfilter" 
+        v-for="item in produkTerFilter" 
         :key="item.id"
         :id="item.id"
         :nama="item.nama"

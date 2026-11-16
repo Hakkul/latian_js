@@ -1,14 +1,16 @@
 <script setup>
 
 defineProps({
-    daftarKategpri:{
+    daftarKategori:{
         type: Array,
         required: true
     },
-    kategoriAktiv: {
+    kategoriAktif: {
         type: String,
         required: true
     }
+    // daftarKategori: Array,
+    // kategoriAktif: String
 
 })
 const emit = defineEmits(['pilih-kategori'])
@@ -18,10 +20,10 @@ const emit = defineEmits(['pilih-kategori'])
 <template>
     <div class="filter-kategori">
         <button
-        v-for="kat in daftarKategpri"
+        v-for="kat in daftarKategori"
         :key="kat"
-        @click="kategoriAktiv"
-        :class="{aktif: kategoriAktiv === kat}"
+        @click="emit('pilih-kategori, kat')"
+        :class="{aktif: kategoriAktif === kat}"
         class="btn-kategori"
 
         >
