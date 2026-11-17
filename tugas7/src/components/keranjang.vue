@@ -5,13 +5,18 @@ import {useCardStore} from '../stores/carStore'
 
 
 const cardStore = useCardStore()
-const {items, totalHarga, StrukTerakhir } = storeToRefs(cardStore)
+const {items, totalHarga, strukTerakhir } = storeToRefs(cardStore)
 
 const namaPembeli = ref ('')
 const metodeBayar = ref('Transfer Bank')
 const erorMessage = ref('')
 
-const formatRupiah = (angka) => {
+const formatRupiah=(angka) => {
+    return Number(angka || 0).toLocaleString('id-ID')
+}
+
+
+const handleCheckout = () => {
     if (!namaPembeli.value.trim()) {
         erorMessage.value = 'Nama pembeli wajib diisi'
         return
@@ -25,7 +30,7 @@ const formatRupiah = (angka) => {
     })
 
     namaPembeli.value = ''
-    metodeBayar1.value = 'Transfer Bank'
+    metodeBayar.value = 'Transfer Bank'
 
 </script>
 

@@ -1,6 +1,7 @@
 <script setup>
 // import { useCartStore } from '../stores/cartStore';
 import { useCardStore } from '../stores/cartStore';
+import keranjang from '../components/keranjang.vue'
 import '../assets/css/cart.css'
 
 // Panggil store Pinia
@@ -28,5 +29,7 @@ const cartStore = useCardStore();
       <hr />
       <h3>Total Harga: Rp {{ cartStore.total_harga.toLocaleString("id-ID") }}</h3>
     </div>
+
+    <keranjang/>
   </div>
 </template>
