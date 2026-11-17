@@ -1,7 +1,7 @@
 <script setup>
 import {ref} from 'vue'
 import {storeToRefs} from 'pinia'
-import {useCardStore} from '../stores/carStore'
+import {useCardStore} from '../stores/cartStore'
 import '../assets/css/keranjang.css'
 
 

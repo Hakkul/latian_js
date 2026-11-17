@@ -29,7 +29,7 @@ const cartStore = useCardStore();
       <hr />
       <h3>Total Harga: Rp {{ cartStore.total_harga.toLocaleString("id-ID") }}</h3>
     </div>
-
-    <keranjang/>
   </div>
+
+  <keranjang />
 </template>
