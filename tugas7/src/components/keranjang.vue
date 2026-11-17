@@ -2,6 +2,7 @@
 import {ref} from 'vue'
 import {storeToRefs} from 'pinia'
 import {useCardStore} from '../stores/carStore'
+import '../assets/css/keranjang.css'
 
 
 const cardStore = useCardStore()
@@ -26,12 +27,12 @@ const handleCheckout = () => {
 
     cardStore.prosesCheckout({
         nama: namaPembeli.value.trim(),
-        metode1: metodeBayar.value,
+        metode: metodeBayar.value,
     })
 
     namaPembeli.value = ''
     metodeBayar.value = 'Transfer Bank'
-
+}
 </script>
 
 <template>
