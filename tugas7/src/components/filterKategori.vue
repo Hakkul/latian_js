@@ -5,7 +5,7 @@ defineProps({
         type: Array,
         required: true
     },
-    kategoriAktif: {
+    kategoriTerpilih: {
         type: String,
         required: true
     }
@@ -22,8 +22,8 @@ const emit = defineEmits(['pilih-kategori'])
         <button
         v-for="kat in daftarKategori"
         :key="kat"
-        @click="emit('pilih-kategori, kat')"
-        :class="{aktif: kategoriAktif === kat}"
+        @click="emit('pilih-kategori', kat)"
+        :class="{aktif: kategoriTerpilih === kat}"
         class="btn-kategori"
 
         >

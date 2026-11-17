@@ -21,7 +21,7 @@ const daftarProduk = ref([
 
 const {
   daftarKategori,
-  kategoriAktif,
+  kategoriTerpilih,
   produkTerFilter,
   pilihKategori
 } = filterProduk(daftarProduk)
@@ -47,7 +47,7 @@ const handleBuyProduk = (produk_data) => {
 
     <filterKategori
     :daftarKategori="daftarKategori"
-    :kategoriAktif="kategoriAktif"
+    :kategoriTerpilih="kategoriTerpilih"
     @pilih-Kategori="pilihKategori"
     >
 
