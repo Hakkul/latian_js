@@ -15,7 +15,6 @@ export function filterProduk(daftar_produk) {
     })
 
     const pilihKategori = (kategoriBaru) => {
-        console.log('tombol ini klik')
         kategoriTerpilih.value = kategoriBaru
     }
 
