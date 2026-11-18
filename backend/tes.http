@@ -1,0 +1,16 @@
+### 1. Ambil semua data inventaris (GET)
+GET http://localhost:8787/api/inventaris
+
+### 2. Ambil detail satu barang (GET by ID)
+GET http://localhost:8787/api/inventaris/2
+
+### 3. Tambah barang baru (POST)
+POST http://localhost:8787/api/inventaris
+Content-Type: application/json
+
+{
+  "nama": "Router TP-Link",
+  "kategori": "Router",
+  "jumlah": 5,
+  "kondisi": "Baik"
+}
