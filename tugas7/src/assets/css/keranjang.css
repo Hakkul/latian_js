@@ -2,6 +2,24 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  color: #222222;      /* Memaksa semua teks di dalam halaman keranjang berwarna gelap */
+  text-align: left;    /* Mengembalikan posisi teks form agar rata kiri */
+}
+
+.keranjang-container h2 {
+  text-align: center;  /* Judul utama tetap di tengah */
+  margin-bottom: 20px;
+}
+
+.btn-qty {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+  color: #222222;      /* Agar simbol - dan + terlihat jelas */
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .keranjang-kosong {
