@@ -14,4 +14,10 @@ mahasiswa.get('/:id', (c) => {
     return c.json({ message: `Detail mahasiswa ${id}`})
 })
 
+mahasiswa.get('/:no', (c) => {
+    const no = c.req.param('no')
+        return c.json({ message: `nomer mahasiswa ${no}`})
+    
+})
+
 export default mahasiswa
