@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 // @ts-ignore
-import mahasiswaRoute from './routes/mahasiswa.js' // Mengimpor rute mahasiswa
+import mahasiswaRoute from './routes/mahasiswa.js' 
 
 const app = new Hono()
 

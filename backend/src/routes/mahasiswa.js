@@ -13,3 +13,5 @@ mahasiswa.get('/:id', (c) => {
     const id = c.req.param('id')
     return c.json({ message: `Detail mahasiswa ${id}`})
 })
+
+export default mahasiswa
