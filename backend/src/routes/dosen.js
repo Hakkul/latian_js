@@ -1,4 +1,4 @@
-import { Hono } from "hono"
+import { Hono } from 'hono'
 
 const namaDosen = new Hono()
 
@@ -12,7 +12,7 @@ let dosen = [
 ]
 
 //ambil semua API dosen
-app.get('/api/dosen', (info) => {
+namaDosen.get('/api/dosen', (info) => {
     return info.json({
         status: "sukses",
         sen: dosen
@@ -20,11 +20,13 @@ app.get('/api/dosen', (info) => {
     })
 })
 
-app.get('/api/dosen/:id', (info) => {
+namaDosen.get(':id', (info) => {
     const id = Number(info.req.param('id'))
+    const cariDosen = dosen.find((item) => item.id === id)
 
     return info.json({
-        sukses: 'sukses'
+        sukses: 'sukses',
+        data: cariDosen
     })
 })
 export default namaDosen
