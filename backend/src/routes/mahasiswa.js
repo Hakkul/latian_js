@@ -30,7 +30,7 @@ mahasiswa.get('/', (c) => {
 })
 
 mahasiswa.post('/', async (c) => {
-    const body = await c.req
+    const body = await c.req.json()
 
     if (!body.nim || !body.nama) {
         return c.json({status: 'eror',  message: 'nama & nim wajib di isi'}, 400)
