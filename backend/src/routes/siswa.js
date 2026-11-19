@@ -1,4 +1,4 @@
-import {Hono, hono} from 'hono'
+import {Hono} from 'hono'
 
 const mahasiswa = new Hono()
 
@@ -13,3 +13,5 @@ mahasiswa.get('/:id', (c) => {
     const id = c.req.param('id')
     return c.json({ message: `Detail mahasiswa ${id}`})
 })
+
+export default mahasiswa
