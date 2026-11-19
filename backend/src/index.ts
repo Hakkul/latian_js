@@ -15,6 +15,6 @@ app.get('/', (c) => {
 // Menghubungkan semua rute di mahasiswa.js ke awalan /api/mahasiswa
 app.route('/api/mahasiswa', mahasiswaRoute)
 app.route('/api/siswa', siswaJosjis)
-app.route('/dos/dosen', Dosen)
+app.route('/api/dosen', Dosen)
 
 export default app
