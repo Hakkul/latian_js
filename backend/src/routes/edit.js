@@ -1,4 +1,4 @@
-// Live Demo Code: src/routes/mahasiswa.js
+// copy an dari ppt
 import { Hono } from "hono"
 
 const editMhs = new Hono()
