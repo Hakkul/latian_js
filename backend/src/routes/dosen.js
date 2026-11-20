@@ -12,7 +12,7 @@ let dosen = [
 ]
 
 //ambil semua API dosen
-namaDosen.get('/api/dosen', (info) => {
+namaDosen.get('/', (info) => {
     return info.json({
         status: "sukses",
         sen: dosen

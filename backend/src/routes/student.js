@@ -5,11 +5,13 @@ const app = new Hono()
 
 const dataMahasiswa = [
   { nim: "240511001", nama: "Budi Santoso", prodi: "TI" },
-  { nim: "240511002", nama: "Siti Rahma", prodi: "TI" }
+  { nim: "240511002", nama: "Siti Rahma", prodi: "TI" },
+  { nim: "202569040005", nama: "Hakkul", prodi: "TI" }
+
 ]
 
 // GET dengan Query Param: /api/mahasiswa?prodi=TI
-app.get("/api/student", (c) => {
+app.get("/", (c) => {
   const prodiFilter = c.req.query("prodi")
   if (prodiFilter) {
     const hasil = dataMahasiswa.filter(m => m.prodi === prodiFilter)
@@ -19,7 +21,7 @@ app.get("/api/student", (c) => {
 })
 
 // GET dengan Path Param: /api/mahasiswa/:nim
-app.get("/api/student/:nim", (c) => {
+app.get("/nim/:nim", (c) => {
   const nim = c.req.param("nim")
   const mhs = dataMahasiswa.find(m => m.nim === nim)
   if (!mhs) {
@@ -28,8 +30,17 @@ app.get("/api/student/:nim", (c) => {
   return c.json({ data: mhs })
 })
 
+app.get("/nama/:nama", (c) => {
+  const nama = c.req.param("nama").toLocaleLowerCase()
+  const mhs = dataMahasiswa.find(m => m.nama.toLocaleLowerCase() === nama)
+  if (!mhs) {
+    return c.json({ error: "Mahasiswa tidak ditemukan" }, 404)
+  }
+  return c.json({ data: mhs })
+})
+
 // POST: Tambah Mahasiswa Baru
-app.post("/api/student", async (c) => {
+app.post("/", async (c) => {
   const body = await c.req.json()
   dataMahasiswa.push(body)
   return c.json({ pesan: "Berhasil menambahkan mahasiswa", data: body }, 201)
