@@ -116,4 +116,28 @@ editMhs.delete('/:nim', (c) => {
   })
 })
 
+// Akses: PATCH http://localhost:8787/api/mahasiswa/2003
+editMhs.patch('/:nim', async (c) => {
+  const nim = c.req.param('nim')
+  const body = await c.req.json()
+
+  // Cari posisi index mahasiswa
+  const index = dataMahasiswa.findIndex(m => String(m.nim) === nim)
+
+  if (index === -1) {
+    return c.json({ pesan: 'Mahasiswa tidak ditemukan' }, 404)
+  }
+
+  // Salin semua data lama, lalu timpa hanya dengan field baru yang dikirim di body
+  dataMahasiswa[index] = {
+    ...dataMahasiswa[index],
+    ...body
+  }
+
+  return c.json({
+    pesan: 'Sebagian data mahasiswa berhasil diperbarui',
+    data: dataMahasiswa[index]
+  })
+})
+
 export default editMhs
