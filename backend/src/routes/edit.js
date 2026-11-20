@@ -96,7 +96,7 @@ editMhs.put('/:nim', async (c) => {
   })
 })
 
-// Akses: DELETE http://localhost:8787/api/mahasiswa/2003
+// Delete Api
 editMhs.delete('/:nim', (c) => {
   const nim = c.req.param('nim')
 
@@ -116,7 +116,7 @@ editMhs.delete('/:nim', (c) => {
   })
 })
 
-// Akses: PATCH http://localhost:8787/api/mahasiswa/2003
+// edit API
 editMhs.patch('/:nim', async (c) => {
   const nim = c.req.param('nim')
   const body = await c.req.json()
