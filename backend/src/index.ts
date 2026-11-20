@@ -5,6 +5,8 @@ import mahasiswaRoute from './routes/mahasiswa.js'
 import siswaJosjis from './routes/siswa.js'
 // @ts-ignore
 import Dosen from './routes/dosen.js'
+// @ts-ignore
+import Student from './routes/student.js'
 
 const app = new Hono()
 
@@ -16,5 +18,6 @@ app.get('/', (c) => {
 app.route('/api/mahasiswa', mahasiswaRoute)
 app.route('/api/siswa', siswaJosjis)
 app.route('/api/dosen', Dosen)
+app.route('/api/student', Student)
 
 export default app
