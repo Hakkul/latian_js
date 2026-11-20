@@ -96,4 +96,24 @@ editMhs.put('/:nim', async (c) => {
   })
 })
 
+// Akses: DELETE http://localhost:8787/api/mahasiswa/2003
+editMhs.delete('/:nim', (c) => {
+  const nim = c.req.param('nim')
+
+  // Cari posisi index mahasiswa
+  const index = dataMahasiswa.findIndex(m => String(m.nim) === nim)
+
+  if (index === -1) {
+    return c.json({ pesan: 'Mahasiswa tidak ditemukan' }, 404)
+  }
+
+  // Hapus 1 data pada posisi index tersebut
+  const dataDihapus = dataMahasiswa.splice(index, 1)
+
+  return c.json({
+    pesan: 'Data mahasiswa berhasil dihapus',
+    data: dataDihapus[0]
+  })
+})
+
 export default editMhs
