@@ -1,0 +1,40 @@
+Studi Kasus: Sistem Peminjaman Buku Perpustakaan Kampus
+Kamu diminta membangun API sederhana untuk mencatat peminjaman buku mahasiswa.
+
+1. Persiapan Struktur File
+
+Buat file sub-router baru bernama src/routes/peminjaman.js.
+
+Hubungkan file tersebut di src/index.ts dengan awalan alamat /api/peminjaman.
+
+2. Data Awal (Array di peminjaman.js)
+Sediakan data awal berikut di dalam peminjaman.js:
+
+JavaScript
+let dataPeminjaman = [
+  { id: 1, namaPeminjam: "Rizky", judulBuku: "Algoritma Pemrograman", status: "Dipinjam" },
+  { id: 2, namaPeminjam: "Siti", judulBuku: "Basis Data Lanjut", status: "Dikembalikan" }
+]
+3. Tantangan Endpoint yang Harus Kamu Buat:
+
+Tantangan 1 — GET /api/peminjaman (Lihat Semua & Filter Status):
+
+Jika diakses biasa (GET http://localhost:8787/api/peminjaman), tampilkan semua data peminjaman beserta jumlah totalnya.
+
+Bonus Tantangan: Jika diakses dengan query parameter status (contoh: GET http://localhost:8787/api/peminjaman?status=Dipinjam), tampilkan hanya data yang statusnya sesuai saja.
+
+Tantangan 2 — GET /api/peminjaman/:id (Detail Satu Peminjaman):
+
+Cari satu data peminjaman berdasarkan id.
+
+Jika tidak ditemukan, kembalikan pesan error dengan status HTTP 404.
+
+Tantangan 3 — POST /api/peminjaman (Catat Peminjaman Baru):
+
+Terima input JSON berisi namaPeminjam dan judulBuku.
+
+Validasi: Jika namaPeminjam atau judulBuku kosong/tidak dikirim, tolak permintaan dengan status HTTP 400 dan pesan error.
+
+Otomatisasi Data: Buat id bertambah otomatis (dataPeminjaman.length + 1), dan atur properti status secara default menjadi "Dipinjam" jika pengirim tidak mencantumkannya.
+
+Simpan ke array dan kembalikan respon sukses dengan status HTTP 201.
