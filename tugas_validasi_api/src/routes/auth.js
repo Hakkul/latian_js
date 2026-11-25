@@ -24,7 +24,7 @@ app.post('/register', zValidator("json", register, (hasil, info) => {
         return info.json({
             sukses: false,
             pesan: "Validasi data gagal",
-            eror: hasil.error.flatten().fieldErorrs
+            eror: hasil.error.flatten().fieldErrors
         }, 400)
     }
 }), async (info) => {
