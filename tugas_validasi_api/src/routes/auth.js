@@ -19,7 +19,7 @@ app.get('/register', (c) => {
     return c.text('register aman')
 })
 
-app.post('/register', zValidator("json", register), (hasil, info) => {
+app.post('/register', zValidator("json", register, (hasil, info) => {
     if (!hasil.success) {
         return info.json({
             sukses: false,
@@ -35,6 +35,6 @@ app.post('/register', zValidator("json", register), (hasil, info) => {
         pesan: "semua data sesuai",
         data: { id: Date.now(), ...dataValid}
     },201 )
-}
+})
 
 export default app
