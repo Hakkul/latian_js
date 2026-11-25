@@ -1,9 +1,9 @@
 import { Hono } from 'hono'
+// @ts-ignore
+import registerAPP from './routes/auth.js'
 
 const app = new Hono()
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+app.route('/api/auth', registerAPP)
 
 export default app
