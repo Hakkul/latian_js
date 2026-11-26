@@ -1,9 +1,13 @@
 import { Hono } from 'hono'
+// @ts-ignore
+import pendaftaranApp from './routes/pendaftaran.js'
 
-const app = new Hono()
+const server = new Hono()
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
+server.get('/', (info) => {
+  return info.text('Server Hono aktiv')
 })
 
-export default app
+server.route('/api/pendaftaran', pendaftaranApp)
+
+export default server
