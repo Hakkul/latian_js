@@ -44,4 +44,5 @@ pendaftaran.get('/', (info) => {
     })
 })
 
+// export variable agar bisa jalan
 export default pendaftaran
