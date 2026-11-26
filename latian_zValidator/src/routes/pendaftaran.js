@@ -35,7 +35,11 @@ pendaftaran.post('/', cekValidasi("json", rulePendfataran, (hasil, info) => {
 
 
 pendaftaran.get('/', (info) => {
-    return info.text('Server pendaftaran aktiv')
+    return info.json({
+        pesan: true,
+        total: simpanPendaftaran.length,
+        data: pendaftaran
+    })
 })
 
 export default pendaftaran
